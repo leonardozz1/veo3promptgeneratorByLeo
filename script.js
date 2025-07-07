@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('generate-prompt').addEventListener('click', generatePrompt);
     document.getElementById('change-style').addEventListener('click', changeStyle);
-    document.getElementById('change-title').addEventListener('click', changeTitle);
     document.getElementById('reset-form').addEventListener('click', resetForm);
     document.getElementById('copy-indonesia').addEventListener('click', () => copyToClipboard('output-indonesia'));
     document.getElementById('copy-inggris').addEventListener('click', () => copyToClipboard('output-inggris', true));
@@ -136,31 +135,18 @@ ${negatif}`;
 }
 
 function resetForm() {
-    document.getElementById('judul-scene').value = 'Terminal bus malam';
-    document.getElementById('deskripsi-karakter').value = `Seorang vlogger pria muda asal Maluku berusia 27 tahun.
-Perawakan/Bentuk Tubuh: tubuh kekar, tinggi 164cm, bentuk badan proporsional.
-warna kulit: sawo matang cerah.
-Rambut: lurus, hitam kecokelatan, belah samping.
-Wajah: wajah oval, alis tebal alami, mata hitam besar, senyum ramah, pipi merona, bibir natural.
-Pakaian: mengenakan jaket hoddie warna loreng dan celana panjang hitam robek di lutut, membawa ransel kecil.`;
-    document.getElementById('detail-suara').value = `Dia berbicara dengan suara pria muda yang hangat dan penuh semangat.
-Nada: Young Male.
-Timbre: bersahabat dan enerjik.
-Aksen/Logat: logat Indonesia dengan sentuhan khas Maluku halus, berbicara murni dalam Bahasa Indonesia.
-Cara Berbicara: tempo sedang-cepat, gaya bicara lincah dan ekspresif.
-PENTING: Seluruh dialog harus dalam Bahasa Indonesia dengan pengucapan natural dan jelas. Pastikan suara karakter ini konsisten di seluruh video.`;
-    document.getElementById('aksi-karakter').value = 'berjalan di sekitar terminal bus malam sambil melihat-lihat aktivitas penumpang dan pedagang.';
-    document.getElementById('ekspresi-karakter').value = 'Karakter menunjukkan ekspresi kagum dan antusias, sering tersenyum sambil melirik kamera.';
-    document.getElementById('latar-tempat-waktu').value = `latar tempat: di terminal bus antar kota malam hari, terdapat pedagang kaki lima di pinggir jalur keberangkatan, beberapa bus berjajar dengan lampu menyala.
-Waktu: malam hari, hujan rintik-rintik.`;
-    document.getElementById('gerakan-kamera').value = 'Tracking Shot';
-    document.getElementById('detail-visual').value = `Pencahayaan: natural dari lampu jalan dan lampu bus, pantulan cahaya pada aspal basah.
-Gaya Video/Art Style: cinematic realistis.
-Kualitas Visual: Resolusi 4K.`;
-    document.getElementById('suasana').value = 'Suasana sibuk, ramai, dengan kesan perjalanan malam yang hidup dan dinamis meskipun hujan.';
-    document.getElementById('suara-lingkungan').value = 'SOUND: suara mesin bus menyala, pengumuman dari pengeras suara, derai hujan ringan, dan percakapan samar antar penumpang dan pedagang.';
-    document.getElementById('dialog-karakter').value = `DIALOG dalam Bahasa Indonesia: Karakter berkata: Tiap kota punya terminal kayak gini, dan aku suka banget suasana malamnya… hangat walau gerimis begini. Rasanya kayak perjalanan baru mau dimulai.`;
-    document.getElementById('negative-prompt').value = `Hindari: teks di layar, subtitle, tulisan di video, font, logo, distorsi, artefak, anomali, wajah ganda, anggota badan cacat, tangan tidak normal, orang tambahan, objek mengganggu, kualitas rendah, buram, glitch, suara robotik, suara pecah.`;
+    document.getElementById('judul-scene').value = '';
+    document.getElementById('deskripsi-karakter').value = '';
+    document.getElementById('detail-suara').value = '';
+    document.getElementById('aksi-karakter').value = '';
+    document.getElementById('ekspresi-karakter').value = '';
+    document.getElementById('latar-tempat-waktu').value = '';
+    document.getElementById('gerakan-kamera').selectedIndex = 0;
+    document.getElementById('detail-visual').value = '';
+    document.getElementById('suasana').value = '';
+    document.getElementById('suara-lingkungan').value = '';
+    document.getElementById('dialog-karakter').value = '';
+    document.getElementById('negative-prompt').value = '';
     document.getElementById('output-indonesia').value = '';
     document.getElementById('output-inggris').innerHTML = '';
 }
@@ -193,12 +179,5 @@ function changeStyle() {
         root.style.setProperty('--background-color', color3);
         root.style.setProperty('--button-bg', color1);
         root.style.setProperty('--button-hover-bg', color2);
-    }
-}
-
-function changeTitle() {
-    const newTitle = prompt("Masukkan judul baru:");
-    if (newTitle) {
-        document.getElementById('main-title').textContent = newTitle;
     }
 } 
