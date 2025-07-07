@@ -77,6 +77,7 @@ Kualitas Visual: Resolusi 4K.</textarea>
                     <button id="generate-prompt">Hasilkan Prompt</button>
                     <button id="change-style">Ubah Style</button>
                     <button id="change-title">Ubah Judul</button>
+                    <button id="reset-form" type="button">Reset</button>
                 </div>
             </div>
         </div>
@@ -84,11 +85,17 @@ Kualitas Visual: Resolusi 4K.</textarea>
             <h2>Hasil Prompt</h2>
             <div class="output-columns">
                 <div class="output-column">
-                    <h3>Bahasa Indonesia (Dapat Diedit)</h3>
+                    <div class="output-header">
+                        <h3>Bahasa Indonesia (Dapat Diedit)</h3>
+                        <button id="copy-indonesia" class="copy-btn">Salin</button>
+                    </div>
                     <textarea id="output-indonesia"></textarea>
                 </div>
                 <div class="output-column">
-                    <h3>Bahasa Inggris (Final)</h3>
+                    <div class="output-header">
+                        <h3>Bahasa Inggris (Final)</h3>
+                        <button id="copy-inggris" class="copy-btn">Salin</button>
+                    </div>
                     <div id="output-inggris" class="output-final"></div>
                 </div>
             </div>
